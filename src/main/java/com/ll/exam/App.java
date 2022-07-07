@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class App {
     public void run() {
         System.out.println("== 명언 SSG ==");
-
+        int wiseSayingLastId = 0; //가장 마지막 명언글의 번호
         Scanner sc = new Scanner(System.in);
 
         outer:
@@ -19,7 +19,11 @@ public class App {
                     String content = sc.nextLine().trim();
                     System.out.printf("작가 : ");
                     String author = sc.nextLine().trim();
-                    System.out.println("번 명언이 등록되었습니다.");
+                    int id = ++wiseSayingLastId;
+                    WiseSaying wiseSaying = new WiseSaying(id, content,author);
+                    System.out.println(wiseSaying);
+
+                    System.out.printf("%d번 명언이 등록되었습니다.\n",id);
                     break;
                 case "목록":
                     System.out.println("번호 / 작가 / 명언");
@@ -34,3 +38,4 @@ public class App {
         sc.close();
     }
 }
+
