@@ -27,7 +27,6 @@ public class App {
                     break;
                 case "목록":
                     System.out.println("번호 / 작가 / 명언");
-                    printf
                     break;
                 case "삭제":
                     break;
